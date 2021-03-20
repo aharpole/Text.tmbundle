@@ -8,7 +8,7 @@ Installation
 
     mkdir -p ~/Library/Application\ Support/TextMate/Bundles
     cd ~/Library/Application\ Support/TextMate/Bundles
-    git clone git://github.com/aharpole/text-tmbundle.git "Text.tmbundle"
+    git clone git@github.com:aharpole/Text.tmbundle.git
     
 
 License
