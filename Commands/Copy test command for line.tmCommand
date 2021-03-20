@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby18 -wKU
+line_number = ENV["TM_SELECTION"].split("-").first.split(":").first
+path = ENV["TM_FILEPATH"].gsub("#{ENV['TM_PROJECT_DIRECTORY']}/", "") + ":#{line_number}"
+`/bin/echo -n "rails test #{path}" | pbcopy`
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>name</key>
+	<string>Copy test command for line</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>uuid</key>
+	<string>C9A1E612-B60A-45B8-B438-FC7B9CDFCAAC</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+
+if [ -z ${TM_PROJECT_DIRECTORY+x} ]; then
+  echo -n "$TM_FILEPATH" | pbcopy
+else
+  TM_PROJECT_DIRECTORY="$TM_PROJECT_DIRECTORY/"
+  echo -n "rails test ${TM_FILEPATH#$TM_PROJECT_DIRECTORY}" | pbcopy
+fi;</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>name</key>
+	<string>Copy testrb command</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>uuid</key>
+	<string>74BB5709-69C7-4061-8582-E3343B3B9529</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
